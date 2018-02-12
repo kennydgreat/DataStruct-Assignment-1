@@ -57,5 +57,10 @@ Athlete::~Athlete() {
 	delete distance;
 	cout << "Heap memory blocks for Athlete object freed" << endl;
 }
-
-
+/*This is the overoad "<<" for printing Athlete objects*/
+std::ostream& operator<<(std::ostream& out, const Athlete& athlete) {
+	out << "Name: " << athlete.get_first_name() << " " <<
+		athlete.get_last_name() << ", Distance Jumped: " <<
+		athlete.get_distance() << endl;
+	return out;
+}

@@ -14,10 +14,7 @@ int main() {
 	 Athlete * athlete = new Athlete(first_name, last_name, nationality,
 		 distance);
 
-	 cout << "athlete distance is "<< athlete->get_distance() << 
-		 "name is "<< athlete->get_first_name() <<" "
-		 << athlete->get_last_name()
-		 << "nationality is " << athlete->get_nationality() << endl;
+	 cout << *athlete;
 
 	 cout << "person info is " << person->get_first_name() << " "
 		 << person->get_first_name() << ", " << person->get_nationality()

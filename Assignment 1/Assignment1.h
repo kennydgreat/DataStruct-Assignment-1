@@ -20,9 +20,9 @@ public:
 	~Person(); // Decontructor
 
 	//Getters
-	char * get_first_name() { return first_name; }
-	char * get_last_name() { return last_name; }
-	char * get_nationality() { return nationality; }
+	char * get_first_name() const { return first_name; }
+	char * get_last_name() const { return last_name; }
+	char * get_nationality() const { return nationality; }
 };
  /*This class is derived from the Person's class. It has
   a distance variable which is the distance jumped by the althele*/
@@ -38,7 +38,7 @@ public:
 	~Athlete(); //Decontructor
 
 	//Getters 
-	char * get_distance() { return distance; }
+	char * get_distance() const{ return distance; }
 };
-// overloaded operator for printing 
+// overloaded "<<" operator for printing Athlete objects
 std::ostream& operator<<(std::ostream& out, const Athlete& athlete);
