@@ -9,7 +9,7 @@ int main() {
 	 char nationality[7] = "Kenyan";
 	 char distance[3] = "10";
 
-	 Person * person = new Person(first_name, last_name,
+	/* Person * person = new Person(first_name, last_name,
 		 nationality);
 	 Athlete * athlete = new Athlete(first_name, last_name, nationality,
 		 distance);
@@ -20,9 +20,19 @@ int main() {
 		 << person->get_first_name() << ", " << person->get_nationality()
 		 << endl;
 
+
 	 delete athlete;
 	 
 	 delete person;
+	 */
+	 vector<Athlete*> data_vector;
+	 read_data_file(&data_vector);
+	 if (!data_vector.empty()) {
+		 for (unsigned int i = 0; i < data_vector.size(); i++)
+		 {
+			 cout << *data_vector.at(i) << endl;
+		 }
+	 }
 	system("pause");
 }
 

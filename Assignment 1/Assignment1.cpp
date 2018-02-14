@@ -1,8 +1,15 @@
-/*This cpp file is for the implementations of the Person and Athlete
-class */
+/*This cpp file is for the implementations of the Person, Athlete
+class and all non member functions*/
 
 #include "Assignment1.h"
-#define ONE 1
+#include <fstream>
+//Constants
+#ifndef ONE
+#define ONE 1 
+#endif
+#ifndef FIFTHY
+#define FIFTHY 50 
+#endif
 /*This is the constructor of the Person class. It 
  1) Allocates memory on the heap for each variable of the object.
  2) Copys the strings from the parameters into the respective variable
@@ -63,4 +70,39 @@ std::ostream& operator<<(std::ostream& out, const Athlete& athlete) {
 		athlete.get_last_name() << ", Distance Jumped: " <<
 		athlete.get_distance() << endl;
 	return out;
+}
+/*This function handles the file proicessing. It
+1) Opens the file for reading
+2) reads the string seperated by a space and saves them in 
+ first_name, last_name, nationality and distance respectively
+3) Creates an Athlete object using the strings and inserts the object
+into a vector that is provided
+*/
+void read_data_file(vector<Athlete*> *data_vector) {
+	char title[FIFTHY] ;
+	char first_name[FIFTHY];
+	char last_name[FIFTHY];
+	char nationality[FIFTHY];
+	char distance [FIFTHY];
+
+	ifstream infile;
+	infile.open("jump.txt");
+	if (infile.fail()) {
+		cout << "jump.txt not found" << endl;
+		exit(1);
+	}
+	//Skipping the title
+	infile.getline(title, FIFTHY);
+	
+
+	while (infile.good()) {
+		// Geting first
+		infile.getline(first_name, FIFTHY, ' ');
+		infile.getline(last_name, FIFTHY, ' ');
+		infile.getline(nationality, FIFTHY, ' ');
+		infile.getline(distance, FIFTHY, '\n');
+		Athlete *athlete = new Athlete(first_name, last_name,
+			nationality, distance);
+		data_vector->push_back(athlete);
+	}
 }

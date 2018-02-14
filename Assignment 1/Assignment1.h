@@ -2,6 +2,7 @@
 Person and Athlete classes*/
 
 #include <iostream> 
+#include <vector>
 using namespace std;
 
 class Person {
@@ -42,3 +43,4 @@ public:
 };
 // overloaded "<<" operator for printing Athlete objects
 std::ostream& operator<<(std::ostream& out, const Athlete& athlete);
+void read_data_file(vector<Athlete*>* data_vector);
