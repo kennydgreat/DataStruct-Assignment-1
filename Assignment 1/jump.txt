@@ -14,7 +14,7 @@ Greg Rutherford Great_Britain 8.08
 Henry Frayne Australia 7.95
 Ignisious Gaisah Ghana 7.79
 Li Jinzhe China 7.77
-Lin Ching-Hsuan Chinese Taipei 7.38
+Lin Ching-Hsuan Chinese_Taipei 7.38
 Loúis Tsátoumas Greece 7.53
 Luis Rivera Mexico 7.42
 Marcos Chuva Portugal 7.55

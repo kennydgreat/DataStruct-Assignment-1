@@ -1,8 +1,16 @@
-/*This Header file contains the class declarations of the 
+/*This Header file contains the class declarations  tforhe 
 Person and Athlete classes*/
 
 #include <iostream> 
 #include <vector>
+
+//Constants
+#ifndef ONE
+#define ONE 1 
+#endif
+#ifndef FIFTHY
+#define FIFTHY 50 
+#endif
 using namespace std;
 
 class Person {
@@ -44,3 +52,7 @@ public:
 // overloaded "<<" operator for printing Athlete objects
 std::ostream& operator<<(std::ostream& out, const Athlete& athlete);
 void read_data_file(vector<Athlete*>* data_vector);
+bool read_and_validate_threshold_input(char ** threshold);
+void find_print_athlete_above_threshold(char * threshold, 
+	vector<Athlete*>* data_vector);
+void free_up_memory_for_vector_data(vector<Athlete*>* data_vector);
