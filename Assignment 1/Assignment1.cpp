@@ -86,7 +86,7 @@ void read_data_file(vector<Athlete*> *data_vector) {
 	infile.ignore(FIFTHY, '\n');
 	
 
-	while (infile.good()) {
+	while (!infile.eof()) {
 		// Geting firstname, last name, nationality, and distance jumped
 		infile.getline(first_name, FIFTHY, ' ');
 		infile.getline(last_name, FIFTHY, ' ');
@@ -96,6 +96,7 @@ void read_data_file(vector<Athlete*> *data_vector) {
 			nationality, distance);
 		data_vector->push_back(athlete);
 	}
+	infile.close();
 }
 /*
 This function will be used to get and validate user input for the
